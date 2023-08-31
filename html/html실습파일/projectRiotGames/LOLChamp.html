@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOLChamp</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div class="header"></div>
+
+    <section id="champSection">
+        <div class="headBack"></div>
+        <div class="title">
+            <h2>챔피언을</h2>
+            <h3>선택하세요</h3>
+            <p>140여 명의 챔피언 중 자신의 플레이 스타일에 어울리는 챔피언을 찾아보세요.</p>
+            <p>한 명의 챔피언을 완벽히 익히거나 모든 챔피언을 사용해 볼 수도 있습니다.</p>
+        </div>
+        <div class="championControl row">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>검색
+            </div>
+            <div class="role">
+                <div class="pos on">전체</div>
+                <div class="pos">암살자</div>
+                <div class="pos">전사</div>
+                <div class="pos">마법사</div>
+                <div class="pos">원거리 딜러</div>
+                <div class="pos">서포터</div>
+                <div class="pos">탱커</div>
+            </div>
+            <div class="difficult">
+                모든 난이도<i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="champList row">
+            <!-- <a href="javascript:;" class="champBanner">
+                <div class="champImg"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg" alt=""></div>
+                <div class="champName"></div>
+            </a> -->
+        </div>
+    </section>
+
+    <div class="footer"></div>
+    
+    <script src="./js/common.js"></script>
+    <script>
+        $('.header').load('header.html', function(){
+            $('.bb').remove()
+            let text = `<div class="bb">
+                <div class="sideMenuBar">
+                    <a href="./LOLMain.html">
+                        메인으로   
+                    </a>
+                </div>
+                <div class="sideMenuBar">
+                    <a href="./LOLPlay.html">
+                        지금 플레이하기
+                    </a>
+                </div>
+            </div>`
+
+            $('.sideTitleList').prepend(text)
+        })
+        //로딩이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg
+        //풀이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg
+        //작은이미지링크 http://ddragon.leagueoflegends.com/cdn/13.17.1/img/champion/Aatrox.png
+
+        //ajax
+        let data = ''
+        let post = ''
+        $.ajax({
+            type:'GET',
+            url:'http://ddragon.leagueoflegends.com/cdn/13.17.1/data/ko_KR/champion.json',
+            dataType:'json',
+            success : function(rdata){
+                data = rdata.data
+                console.log(data)
+                champListUp(0)
+            },
+            error : function(xhr){
+                alert(xhr.status+"/"+xhr.errorText)
+            }
+        })
+
+
+        //필터메소드
+        $('.pos').on('click', function(){
+            $(this).addClass('on').siblings().removeClass('on')
+            let role = $(this).index()
+            champListUp(role)
+        })
+
+        //필터적용
+        function champListUp(role){
+            switch(role){
+                case 0 : usedata("all"); break;
+                case 1 : usedata("Assassin"); break;
+                case 2 : usedata("Fighter"); break;
+                case 3 : usedata("Mage"); break;
+                case 4 : usedata("Marksman"); break;
+                case 5 : usedata("Support"); break;
+                case 6 : usedata("Tank"); break;
+            }
+        }
+      
+        //데이터작성
+        function usedata(a){
+            for(let i in data){
+                if(a == "all"){
+                    post += `<a href="./LOLDetail.html?${data[i].id}" class="champBanner">
+                                <div class="champImg"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${data[i].id}_0.jpg" alt=""></div>
+                                <div class="champName">${data[i].name}</div>
+                            </a>
+                            `
+                }else{
+                    data[i].tags.forEach(element => {
+                        if(element == a){
+                            post += `<a href="./LOLDetail.html?${data[i].id}" class="champBanner">
+                                <div class="champImg"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${data[i].id}_0.jpg" alt=""></div>
+                                <div class="champName">${data[i].name}</div>
+                            </a>
+                            `
+                        }
+                    });
+                }
+            }
+            /* console.log(post) */
+            $('.champBanner').remove()
+            $('.champList').append(post)
+            post = ''
+        }
+    </script>
+
+</body>
+</html>

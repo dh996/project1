@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOLDetail</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div class="header"></div>
+
+    <section id="detailSection">
+        <div class="loadImg"></div>
+        <div class="back">
+            <div class="back2 row">
+                <article id="article1">
+                    <div class="art1Top"></div>
+                    <div class="champImg">
+                        <div class="left btn"><i class="fa-solid fa-chevron-left"></i></div>
+                        <div class="champName">
+                            <!-- <div class="aa">아트록스</div> -->
+                        </div>
+                        <div class="right btn"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>                
+                </article>
+                <article id="article2">
+                    <div class="detailMenu">
+                        <div class="defaultStats">
+                            <div>기본 스텟</div>
+                            <table class="before">
+                                <tr>
+                                    <td>체력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>마력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>방어력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>마법 저항력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>물리 공격력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>공격 속도</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>공격 사거리</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="setLevel">
+                            <div>레벨 조정하기</div>
+                            <div class="inputBox">
+                                <button type="button" class="LVMinus">-</button>
+                                <input type="text" value="1" autocomplete="off" class="LVInput">
+                                <button type="button" class="LVPlus">+</button>
+                            </div>
+                            <div class="menu">
+                                <button type="button" class="goGame">가져가기</button>
+                                <div><a href="./LOLChamp.html" class="goChamp">뒤로가기</a></div>
+                            </div>
+                        </div>
+                        <div class="statsSimul">
+                            <div class="cc">성장 스텟</div>
+                            <table class="after">
+                                <tr>
+                                    <td>체력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>마력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>방어력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>마법 저항력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>물리 공격력</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>공격 속도</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>공격 사거리</td>
+                                    <td>:</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer"></div>
+    
+    <script src="./js/common.js"></script>
+    <script>
+        $('.header').load('header.html', function(){
+            $('.bb').remove()
+            let text = `<div class="bb">
+                <div class="sideMenuBar">
+                    <a href="./LOLMain.html">
+                        메인으로   
+                    </a>
+                </div>
+                <div class="sideMenuBar">
+                    <a href="./LOLChamp.html">
+                        더 많은 챔피언 알아보기   
+                    </a>
+                </div>
+                <div class="sideMenuBar">
+                    <a href="./LOLPlay.html">
+                        지금 플레이하기
+                    </a>
+                </div>
+            </div>`
+
+            $('.sideTitleList').prepend(text)
+        })
+        //로딩이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg
+        //풀이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg
+        //작은이미지링크 http://ddragon.leagueoflegends.com/cdn/13.17.1/img/champion/Aatrox.png
+
+        let data = ''
+        let temp = location.href.split("?")
+        let detail = decodeURI(temp[1])
+        let name = ''
+        let skin = ''
+
+        //ajax
+        $.ajax({
+            type:'GET',
+            url:`https://ddragon.leagueoflegends.com/cdn/13.17.1/data/ko_KR/champion/${detail}.json`,
+            dataType:'json',
+            success : function(rdata){
+                data = rdata.data[detail]
+                skin = (data.skins)
+                name = (data.name)
+                stats = (data.stats)
+                console.log(skin)
+                console.log(stats)
+                setMainStats()
+                setStatsSimul(1)
+                loadSkin()
+                setSkin(0);
+            },
+            error : function(xhr){
+                alert(xhr.status+"/"+xhr.errorText)
+            }
+        })
+
+        //loadSkin
+        let aa = ''
+        function loadSkin(){
+            for(let i in skin){
+                aa += `<img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${detail}_${skin[i].num}.jpg" alt="">`
+            }
+            $('.loadImg').append(aa)
+        }
+
+        //setSkin
+        function setSkin(i){
+            console.log(skin[i]);
+            $('#detailSection').css({
+                background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${detail}_${skin[i].num}.jpg") no-repeat center top`,
+                backgroundSize: 'cover',
+                transition: 'all 0.5s'
+            })
+            $('.champImg').css({
+                background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${detail}_${skin[i].num}.jpg") no-repeat center top`,
+                backgroundSize: 'cover',
+                transition: 'all 0.5s'
+            })
+            $('.aa').remove()
+            let txt = ''
+            if(skin[i].name == 'default'){
+                txt=`<div class="aa">${name}<div>`
+            }else{
+                txt=`<div class="aa">${skin[i].name}<div>`
+            }
+            $('.champName').append(txt)
+            txt = ''
+        }
+
+        //skin변경함수
+        let skinFlag = 0
+        $('.btn').on('click', function(){
+            if($(this).hasClass('left')){
+                flagDown()
+                setSkin(skinFlag)
+            }else if($(this).hasClass('right')){
+                flagup()
+                setSkin(skinFlag)
+            }
+        })
+
+        //flag변경함수
+        function flagDown(){
+            if(skinFlag == 0){
+                skinFlag = skin.length-1
+            }else{
+                skinFlag -= 1
+            }
+        }
+        function flagup(){
+            if(skinFlag == skin.length-1){
+                skinFlag = 0
+            }else{
+                skinFlag += 1
+            }
+        }
+
+        //setMainStats
+        let defaultStats = ''
+        function setMainStats(){
+            defaultStats =`<table class="before">
+                            <tr>
+                                <td>체력</td>
+                                <td>:</td>
+                                <td>${stats.hp}</td>
+                            </tr>
+                            <tr>
+                                <td>마력</td>
+                                <td>:</td>
+                                <td>${stats.mp}</td>
+                            </tr>
+                            <tr>
+                                <td>방어력</td>
+                                <td>:</td>
+                                <td>${stats.armor}</td>
+                            </tr>
+                            <tr>
+                                <td>마법 저항력</td>
+                                <td>:</td>
+                                <td>${stats.spellblock}</td>
+                            </tr>
+                            <tr>
+                                <td>물리 공격력</td>
+                                <td>:</td>
+                                <td>${stats.attackdamage}</td>
+                            </tr>
+                            <tr>
+                                <td>공격 속도</td>
+                                <td>:</td>
+                                <td>${stats.attackspeed}</td>
+                            </tr>
+                            <tr>
+                                <td>공격 사거리</td>
+                                <td>:</td>
+                                <td>${stats.attackrange}</td>
+                            </tr>
+                        </table>`
+
+            $('.before').remove()
+            $('.defaultStats').append(defaultStats)
+            defaultStats = ''
+        }
+
+        //setStatsSimul
+        let growStats = ''
+        function setStatsSimul(lv){
+            growStats=`<div class="cc">${lv}레벨 스텟</div>
+                       <table class="after">
+                            <tr>
+                                <td>체력</td>
+                                <td>:</td>
+                                <td>${(Math.round(stats.hp+(stats.hpperlevel*(lv-1)))*1000)/1000}</td>
+                            </tr>
+                            <tr>
+                                <td>마력</td>
+                                <td>:</td>
+                                <td>${(Math.round(stats.mp+(stats.mpperlevel*(lv-1)))*1000)/1000}</td>
+                            </tr>
+                            <tr>
+                                <td>방어력</td>
+                                <td>:</td>
+                                <td>${(Math.round(stats.armor+(stats.armorperlevel*(lv-1)))*1000)/1000}</td>
+                            </tr>
+                            <tr>
+                                <td>마법 저항력</td>
+                                <td>:</td>
+                                <td>${(Math.round(stats.spellblock+(stats.spellblockperlevel*(lv-1)))*1000)/1000}</td>
+                            </tr>
+                            <tr>
+                                <td>물리 공격력</td>
+                                <td>:</td>
+                                <td>${(Math.round(stats.attackdamage+(stats.attackdamageperlevel*(lv-1)))*1000)/1000}</td>
+                            </tr>
+                            <tr>
+                                <td>공격 속도</td>
+                                <td>:</td>
+                                <td>${(Math.round((stats.attackspeed*(100+(stats.attackspeedperlevel*(lv-1)))/100)*1000)/1000)}</td>
+                            </tr>
+                            <tr>
+                                <td>공격 사거리</td>
+                                <td>:</td>
+                                <td>${stats.attackrange}</td>
+                            </tr>
+                        </table>`
+
+            $('.cc').remove()
+            $('.after').remove()
+            $('.statsSimul').append(growStats)
+            growStats = ''
+        }
+
+        //setLevel
+        let lv = 1
+        $('.LVMinus').on('click', function(){
+            if(lv >1){
+                $('.LVInput').val(parseInt(--lv))
+                setStatsSimul(lv)
+            }
+        })
+        $('.LVPlus').on('click', function(){
+            if(lv<18){
+                $('.LVInput').val(parseInt(++lv))
+                setStatsSimul(lv)
+            }
+        })
+        $('.LVInput').on('keyup', function(){
+            let i = $(this).val()
+            if(parseInt(i)<1){
+                $(this).val(1)
+                lv = 1
+                setStatsSimul(lv)
+            }else if(parseInt(i)>18){
+                $(this).val(18)
+                lv = 18
+                setStatsSimul(lv)
+            }else if($(this).val() == ''){
+                return
+            }else{
+                lv = (parseInt($(this).val()))
+                $(this).val(parseInt($(this).val()))
+                setStatsSimul(lv)
+            }
+        })
+
+        //세션 스토리지 따기
+        $('.goGame').on('click', function(){
+
+            let champs = JSON.parse(localStorage.getItem("allChamp"))
+                if (champs==null){
+                    champs = []
+                }
+                
+            let answer = confirm("가져갈까요?")
+
+            if(answer){
+                let flag = champs.indexOf(detail)
+                console.log(champs.indexOf(detail))
+                if(flag == -1){
+                    champs.push(detail)
+                    localStorage.setItem("allChamp", JSON.stringify(champs))
+    
+                    location.href = "./LOLPlay.html"
+                }else{
+                    alert("중복입니다")
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1415 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.row {
+  max-width: 959px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  color: #666;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+#header .titleLineBack {
+  position: fixed;
+  height: 80px;
+  width: 200%;
+  left: -50%;
+  z-index: 3;
+  background: transparent;
+}
+#header #titleLine {
+  max-width: 959px;
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 23px;
+  font-weight: 800;
+  z-index: 5;
+}
+#header #titleLine .titleL {
+  display: flex;
+}
+#header #titleLine .titleL .callMainMenu {
+  display: flex;
+  width: 170px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  text-shadow: 3px 3px 3px #333;
+}
+#header #titleLine .titleL .callMainMenu.active {
+  color: #333;
+}
+#header #titleLine .titleL .callMainMenu:hover {
+  cursor: pointer;
+  color: #e42020;
+  transition: all 1s;
+}
+#header #titleLine .titleL .titleLogo {
+  width: 34px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+#header #titleLine .titleL .titleLogo.active {
+  color: #333;
+}
+#header #titleLine .titleL .titleLogo:hover {
+  cursor: pointer;
+  color: #e42020;
+  transition: all 1s;
+}
+#header #titleLine .titleR {
+  justify-content: flex-end;
+  display: flex;
+  width: 100px;
+}
+#header #titleLine .titleR > div {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+#header #titleLine .titleR > div:hover {
+  cursor: pointer;
+}
+#header #titleLine .titleR .translationMenu:hover {
+  background: rgba(153, 153, 153, 0.3);
+  transition: all 1s;
+}
+#header #titleLine .titleR .callSideMenu {
+  background: rgba(153, 153, 153, 0.4);
+  color: #fff;
+}
+#header #titleLine .titleR .callSideMenu:hover {
+  background: rgba(51, 51, 51, 0.4);
+  color: #e42020;
+  transition: all 1s;
+}
+#header #menuSpace {
+  max-width: 959px;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+#header #menuSpace .menuBackground {
+  position: fixed;
+  left: -600px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 2999px;
+  height: 1999px;
+  display: none;
+  margin: 0;
+  z-index: 3;
+}
+#header #menuSpace .menuBackground.active {
+  display: block;
+}
+#header #menuSpace #mainMenu {
+  position: fixed;
+  max-width: 484px;
+  background: #ddd;
+  display: none;
+  z-index: 4;
+  height: 100%;
+  overflow: auto;
+  /* .menuNav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      max-width: 470px;
+      padding: 10px;
+      height: 80px;
+      font-size: 23px;
+      font-weight: 800;
+
+      .riotspan{
+
+          &:hover{
+              cursor: pointer;
+              color: #e42020;
+              transition: all 1s;
+          }
+      }
+
+      .closeMainMenu{
+          padding: 10px;
+
+          &:hover{
+              cursor: pointer;
+              color: #e42020;
+              transition: all 1s;
+          }
+      }
+  } */
+}
+#header #menuSpace #mainMenu.active {
+  display: block;
+}
+#header #menuSpace #mainMenu .blank {
+  padding: 40px;
+}
+#header #menuSpace #mainMenu .menuTitleList {
+  margin: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuName {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background: #ccc;
+  margin: 20px 0;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuName:hover {
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+  transition: all 1s;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuName.active {
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList {
+  display: none;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList.txt a {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList.active {
+  display: block;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList > a {
+  max-width: 464px;
+  max-height: 200px;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList > a .menuBox {
+  display: flex;
+  align-items: center;
+  background: #333;
+  margin: 10px 0;
+  border-radius: 10px;
+  height: 160px;
+  overflow: hidden;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList > a .menuBox > div:nth-child(1) {
+  width: 170px;
+  padding: 10px;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList > a .menuBox > div:nth-child(2) {
+  justify-content: flex-end;
+}
+#header #menuSpace #mainMenu .menuTitleList .menuBar .menuList > a .menuBox > div:nth-child(2) img {
+  height: 170px;
+}
+#header #menuSpace #mainMenu .menuBarBanner {
+  margin: 10px;
+}
+#header #menuSpace #mainMenu .menuBarBanner a img {
+  border-radius: 15px;
+}
+#header #menuSpace #mainMenu .menuBarBanner a div {
+  margin: 10px 0;
+  font-size: 15px;
+}
+#header #menuSpace #sideMenu {
+  position: fixed;
+  right: 50%;
+  margin-right: -480px;
+  top: 0;
+  max-width: 484px;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  color: #ddd;
+  display: none;
+  z-index: 4;
+}
+#header #menuSpace #sideMenu.active {
+  display: block;
+}
+#header #menuSpace #sideMenu .blank {
+  padding: 40px;
+}
+#header #menuSpace #sideMenu .sideTitleList {
+  margin: 10px;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuBar {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuBar:hover {
+  background: #666;
+  cursor: pointer;
+  transition: all 1s;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuBar.active {
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuList {
+  display: none;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuList.active {
+  display: block;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuList a {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuList a:hover {
+  background: #666;
+  cursor: pointer;
+  transition: all 1s;
+}
+#header #menuSpace #sideMenu .sideTitleList .sideMenuList a.active {
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+}
+#header #menuSpace #sideMenu .sideBarSearchBox {
+  justify-content: center;
+  display: flex;
+}
+#header #menuSpace #sideMenu .sideBarSearchBox form {
+  display: flex;
+  height: 35px;
+  width: 190px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#header #menuSpace #sideMenu .sideBarSearchBox form label input {
+  border: none;
+  background: none;
+  width: 160px;
+  color: #fff;
+}
+#header #menuSpace #sideMenu .sideBarSearchBox form button {
+  background: none;
+  color: #fff;
+  border: none;
+}
+#header #menuSpace #sideMenu .loginBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 460px;
+  margin: 30px;
+}
+#header #menuSpace #sideMenu .loginBox a {
+  width: 100%;
+  line-height: 30px;
+  border-radius: 20px;
+  background: #e42020;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+#footer {
+  background: #333;
+  color: #888;
+}
+#footer #footerMenu .footerNavBox {
+  padding: 20px;
+}
+#footer #footerMenu .footerNavBox h2 {
+  font-size: 33px;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+#footer #footerMenu .footerNavBox h2:hover {
+  color: #fff;
+}
+#footer #footerMenu .footerNavBox .footerNav {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+#footer #footerMenu .footerNavBox .footerNav li {
+  padding: 20px 10px;
+}
+#footer #footerMenu .footerNavBox .footerNav li:hover {
+  color: #fff;
+}
+#footer #footerMenu .footerSNS {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  border-bottom: 1px solid #666;
+}
+#footer #footerMenu .footerSNS li {
+  padding: 20px 10px;
+}
+#footer #footerMenu .footerSNS li:hover {
+  color: #fff;
+}
+#footer #footerMenu .footerCop {
+  padding: 40px;
+  text-align: center;
+  border-bottom: 1px solid #666;
+}
+#footer #footerMenu .footerCop:hover {
+  color: #fff;
+}
+#footer #footerMenu .footerGoTop {
+  text-align: center;
+}
+#footer #footerMenu .footerGoTop a {
+  display: inline-block;
+  padding: 40px;
+  width: 100%;
+}
+#footer #footerMenu .footerGoTop a:hover {
+  color: #fff;
+}
+
+#indexSection #article1Back {
+  background: url(./cssSource/article1Back.png) no-repeat;
+  background-position: right center;
+}
+#indexSection #article1Back #article1 {
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+#indexSection #article1Back #article1 .art1 {
+  max-width: 400px;
+  text-align: center;
+}
+#indexSection #article1Back #article1 .art1 .art1Img {
+  max-width: 300px;
+  margin: auto;
+}
+#indexSection #article1Back #article1 .art1 .art1Text {
+  padding: 30px;
+}
+#indexSection #article1Back #article1 .art1 .art1Text h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 1000;
+}
+#indexSection #article1Back #article1 .art1 .art1Text .art1Btn {
+  padding: 10px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 35px;
+  border-radius: 20px;
+  background: #e24040;
+}
+#indexSection #article1Back #article1 .art1 .art1Text .art1Btn:hover {
+  background: #e42020;
+  box-shadow: 0 0 10px 0 #fff;
+  transition: all 1s;
+}
+#indexSection #article1Back #article1 .art1 .art1Text .art1Btn div {
+  margin: 0 10px;
+}
+#indexSection #article2Back {
+  background: #111;
+}
+#indexSection #article2Back #article2 {
+  padding: 10px;
+  color: #fff;
+}
+#indexSection #article2Back #article2 .art2 h2 {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+#indexSection #article2Back #article2 .art2 .art2Main {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#indexSection #article2Back #article2 .art2 .art2Main img {
+  width: 100%;
+}
+#indexSection #article2Back #article2 .art2 .art2Main:hover {
+  box-shadow: 0 0 20px 0 #fff;
+  transition: all 1s;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 20px;
+  width: 95%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* .art2PostManage{
+      text-align: right;
+
+      &:hover{
+          cursor: pointer;
+      }
+
+      .art2PostManageMenu{
+          display: none;
+
+          div{
+              margin-top: 5px;
+          }
+      }
+
+      &:hover .art2PostManageMenu{
+          display: block;
+      }
+  } */
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle {
+  width: 100%;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle h3 {
+  font-size: 33px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle > div > div {
+  padding: 10px;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle > div .delMain {
+  border-radius: 20%;
+}
+#indexSection #article2Back #article2 .art2 .art2Main .art2MainText .art2MainTitle > div .delMain:hover {
+  background: #333;
+  box-shadow: 0 0 10px 0 #fff;
+  transition: all 1s;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub {
+  margin-top: 20px;
+  /* height: 350px;
+  overflow: hidden; */
+  /* &.on{
+      height: fit-content;
+  } */
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #333;
+  margin-top: 10px;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner:hover {
+  background: #444;
+  transition: all 1s;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText {
+  width: 70%;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText h3 {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText > div {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* .art2PostManage{
+      display: flex;
+      position: absolute;
+      right: 0;
+      bottom: -10px;
+
+      &:hover i{
+          display: none;
+      }
+
+      .art2PostManageMenu{
+          display: none;
+      }
+
+      &:hover .art2PostManageMenu{
+          display: block;
+      }
+
+      div{
+          padding-bottom: 5px;
+          padding-left: 5px;
+      }
+  } */
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText > div > div {
+  padding: 10px;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText > div .delSub {
+  border-radius: 20%;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerText > div .delSub:hover {
+  background: #333;
+  box-shadow: 0 0 10px 0 #fff;
+  transition: all 1s;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerImg {
+  position: relative;
+  max-width: 20%;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerImg img {
+  height: 100%;
+}
+#indexSection #article2Back #article2 .art2 .art2Sub .art2SubBanner a .art2BannerImg div {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: #333;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+#indexSection #article2Back #article2 .art2 .art2PlusMenu {
+  max-width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 30px;
+}
+#indexSection #article2Back #article2 .art2 .art2PlusMenu .art2Plus {
+  background: #333;
+  border-radius: 10px;
+  width: 100px;
+  padding: 20px;
+  text-align: center;
+  margin: 15px;
+}
+#indexSection #article2Back #article2 .art2 .art2PlusMenu .art2Plus:hover {
+  cursor: pointer;
+  background: #444;
+}
+#indexSection #article2Back #article2 .art2 .art2PlusMenu .art2Admin {
+  background: #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 15px;
+}
+#indexSection #article2Back #article2 .art2 .art2PlusMenu .art2Admin:hover {
+  cursor: pointer;
+  background: #444;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 15px;
+  background: #333;
+  margin-bottom: 30px;
+  display: none;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm.active {
+  display: block;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminFormInput {
+  display: flex;
+  flex-wrap: wrap;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminFormInput > div {
+  width: 45%;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminFormInput > div p {
+  padding: 10px;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminSubmit {
+  display: flex;
+  justify-content: flex-end;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminSubmit button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: #666;
+  color: #fff;
+  font-weight: bold;
+}
+#indexSection #article2Back #article2 .art2 .art2AdminForm .art2AdminSubmit button:hover {
+  cursor: pointer;
+  background: #999;
+}
+#indexSection #otherBack {
+  background: #323232;
+}
+#indexSection .banners {
+  padding: 10px;
+}
+#indexSection .banners h2 {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#indexSection .banners .artBanner {
+  position: relative;
+  margin-bottom: 30px;
+}
+#indexSection .banners .artBanner a > img {
+  border-radius: 20px;
+  z-index: 1;
+}
+#indexSection .banners .artBanner a > img:hover {
+  box-shadow: 0 0 20px 0 #fff;
+  transition: all 1s;
+}
+#indexSection .banners .artBanner a > div {
+  position: absolute;
+  top: 35%;
+  bottom: 35%;
+  left: 5%;
+  right: 75%;
+  z-index: 2;
+}
+#indexSection #article6 {
+  padding: 10px;
+}
+#indexSection #article6 h2 {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#indexSection #article6 .art6Box {
+  max-width: 939px;
+  overflow: hidden;
+}
+#indexSection #article6 .art6Box .art6Flex {
+  max-width: 100%;
+  margin: 10px;
+  height: 428.5px;
+  position: relative;
+}
+#indexSection #article6 .art6Box .art6Flex .art6FlexBox {
+  display: flex;
+  flex-shrink: 0;
+  width: 500%;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#indexSection #article6 .art6Box .art6Flex .art6FlexBox .artBannerFlex {
+  position: relative;
+  margin: 10px;
+  width: 20%;
+}
+#indexSection #article6 .art6Box .art6Flex .art6FlexBox .artBannerFlex a > img {
+  border-radius: 20px;
+  z-index: 2;
+}
+#indexSection #article6 .art6Box .art6Flex .art6FlexBox .artBannerFlex a > img:hover {
+  box-shadow: 0 0 20px 0 #fff;
+  transition: all 1s;
+}
+#indexSection #article6 .art6Box .art6Flex .art6FlexBox .artBannerFlex a > div {
+  position: absolute;
+  top: 35%;
+  bottom: 35%;
+  left: 5%;
+  right: 75%;
+  z-index: 3;
+}
+#indexSection #article6 .art6BoxControl {
+  margin: 0 auto;
+  display: flex;
+  max-width: 200px;
+  padding: 10px;
+  justify-content: center;
+}
+#indexSection #article6 .art6BoxControl div {
+  background: #666;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 5px;
+}
+#indexSection #article6 .art6BoxControl div:hover {
+  background: #ccc;
+  transition: all 1s;
+}
+#indexSection #article6 .art6BoxControl div.on {
+  background: #e42020;
+}
+
+#mainSection #article1 {
+  background: #f7f7f7;
+}
+#mainSection #article1 .art1BackVideo {
+  height: 550px;
+  overflow: hidden;
+}
+#mainSection #article1 .art1BackVideo video {
+  width: 100%;
+}
+#mainSection #article1 .art1Back {
+  position: relative;
+}
+#mainSection #article1 .art1Back .art1Main {
+  position: absolute;
+  top: -350px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  margin: 0 auto;
+}
+#mainSection #article1 .art1Back .art1Main video {
+  width: 100%;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBox {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: 15px;
+  right: 15px;
+  border: 2px solid #999;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBanner {
+  width: 54%;
+  position: absolute;
+  top: 20%;
+  right: 23%;
+  left: 23%;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBanner .art1Text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBanner .art1Text a {
+  padding: 20px 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  background: #6fe9ff;
+  position: relative;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBanner .art1Text a:hover {
+  background: #a9f2ff;
+  transition: 1s all;
+}
+#mainSection #article1 .art1Back .art1Main .art1MainBanner .art1Text a div {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  border: 1px solid #bbb;
+}
+#mainSection #article2 {
+  padding-top: 130px;
+  background: #f7f7f7;
+  background-image: linear-gradient(#f7f7f7, rgb(198, 248, 255));
+  color: #333;
+  margin: 0;
+}
+#mainSection #article2 .art2 {
+  z-index: 2;
+}
+#mainSection #article2 .art2 .art2Text {
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+}
+#mainSection #article2 .art2 .art2Text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#mainSection #article2 .art2 .art2Menu {
+  width: 90%;
+  display: flex;
+  padding: 10px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  font-weight: 800;
+}
+#mainSection #article2 .art2 .art2Menu a {
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+}
+#mainSection #article2 .art2 .art2Menu a.goChamp {
+  background: rgb(255, 224, 166);
+}
+#mainSection #article2 .art2 .art2Menu a.goPlay {
+  background: #6fe9ff;
+}
+#mainSection #article2 .art2 .art2Back1 {
+  background: url(./cssSource/LOLMain/LOLMainArt2Back2.png) no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 {
+  background: url(./cssSource/LOLMain/LOLMainArt2BackFix.png) no-repeat;
+  background-size: 100%;
+  background-position: left bottom;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display {
+  width: 90%;
+  padding-bottom: 20px;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisMenu {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  padding: 5px;
+  margin-top: 20px;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisMenu div {
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  color: #aaa;
+  font-weight: 900;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisMenu div:hover {
+  cursor: pointer;
+  color: #000;
+  transition: all 1s;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisMenu div.on {
+  cursor: pointer;
+  color: #000;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox {
+  width: 70%;
+  margin: 10px auto;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox .art2Cont {
+  display: none;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox .art2Cont.active {
+  display: block;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox .art2Cont .art2ContImg {
+  border-radius: 50%;
+  border: solid 3px #fff;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox .art2Cont .art2ContTxt {
+  margin-top: 10px;
+  text-align: center;
+}
+#mainSection #article2 .art2 .art2Back1 .art2Back2 .art2Display .art2DisBox .art2Cont .art2ContTxt p {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+}
+#mainSection #article3 {
+  color: #fff;
+  margin: 0;
+}
+#mainSection #article3 .art3Back {
+  padding-bottom: 50px;
+}
+#mainSection #article3 .art3Back.rift {
+  background: url(./cssSource/LOLMain/LOLMainArt3Back1.jpg) no-repeat center top;
+  background-size: cover;
+}
+#mainSection #article3 .art3Back.wind {
+  background: url(./cssSource/LOLMain/LOLMainArt3Back2.jpg) no-repeat center top;
+  background-size: cover;
+}
+#mainSection #article3 .art3Back.tft {
+  background: url(./cssSource/LOLMain/LOLMainArt3Back3.jpg) no-repeat center top;
+  background-size: cover;
+}
+#mainSection #article3 .art3Back .art3 .art3Text {
+  text-align: center;
+  padding-top: 120px;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+#mainSection #article3 .art3Back .art3 .art3Text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+#mainSection #article3 .art3Back .art3 .art3Text h3 {
+  font-size: 26px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoBox {
+  position: relative;
+  border-radius: 50%;
+  margin: 15px auto;
+  max-width: 530px;
+  max-height: 530px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoBox .art3VideoRing {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoBox .art3Video {
+  display: none;
+  overflow: hidden;
+  border-radius: 50%;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoBox .art3Video video {
+  width: 100%;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoBox .art3Video.active {
+  display: block;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl {
+  padding: 50px;
+  margin: 50px auto;
+  border: #aaa solid 1px;
+  width: 80%;
+  text-align: center;
+  line-height: 25px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar {
+  overflow: hidden;
+  height: 200px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList {
+  display: flex;
+  justify-content: center;
+  width: 665px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox .art3Img {
+  margin: 15px 15px 0 15px;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox .art3Img img {
+  width: 80px;
+  border: 1px solid #a9f2ff;
+  transition: all 1s;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox .art3Img img:hover {
+  cursor: pointer;
+  border: 2px solid #a9f2ff;
+  transition: all;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox p {
+  display: none;
+  background: #6fe9ff;
+  padding: 10px;
+  color: #000;
+  font-weight: 900;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox.on img {
+  width: 110px;
+  border: 2px solid #a9f2ff;
+  transition: all 1s;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ImgBar .art3ImgList .art3ImgBox.on p {
+  display: block;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ContentBox .art3Cont {
+  display: none;
+}
+#mainSection #article3 .art3Back .art3 .art3VideoControl .art3ContentBox .art3Cont.active {
+  display: block;
+}
+
+#champSection {
+  background: #f7f7f7;
+  text-align: center;
+}
+#champSection .headBack {
+  width: 100%;
+  height: 80px;
+  background: #333;
+}
+#champSection .title {
+  padding-top: 20px;
+  color: #000;
+}
+#champSection .title h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+#champSection .title h3 {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.5em;
+}
+#champSection .title p {
+  line-height: 1.5em;
+  font-size: 16px;
+}
+#champSection .championControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #999;
+  margin: 10px auto;
+  font-weight: 600;
+}
+#champSection .championControl:hover {
+  cursor: default;
+}
+#champSection .championControl .search {
+  padding: 20px;
+}
+#champSection .championControl .search:hover {
+  color: #000;
+  cursor: pointer;
+}
+#champSection .championControl .difficult {
+  padding: 20px;
+}
+#champSection .championControl .difficult:hover {
+  color: #000;
+  cursor: pointer;
+}
+#champSection .championControl .role {
+  display: flex;
+  color: #999;
+}
+#champSection .championControl .role div {
+  padding: 20px;
+}
+#champSection .championControl .role div:hover {
+  color: #000;
+  cursor: pointer;
+}
+#champSection .championControl .role div.on {
+  color: #000;
+  border-bottom: 3px solid rgb(245, 213, 69);
+}
+#champSection .champList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 2.3%;
+}
+#champSection .champList .champBanner {
+  margin: 10px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  flex-basis: 22%;
+  height: 300px;
+  line-height: 30px;
+  text-align: right;
+}
+#champSection .champList .champBanner .champImg {
+  height: 250px;
+  overflow: hidden;
+}
+#champSection .champList .champBanner .champImg img {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+#champSection .champList .champBanner .champName {
+  padding: 10px;
+  background: #58b9ca;
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  transition: all 0.5s;
+}
+#champSection .champList .champBanner:hover img {
+  transform: scale(1.07);
+  transition: all 0.5s;
+}
+#champSection .champList .champBanner:hover .champName {
+  padding-right: 30px;
+  background: #6fe9ff;
+}
+
+#detailSection {
+  height: 930px;
+  position: relative;
+}
+#detailSection .loadImg {
+  position: absolute;
+  top: 0%;
+  bottom: 100%;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  padding: 0;
+}
+#detailSection .loadImg img {
+  width: 0px;
+  height: 0px;
+}
+#detailSection .back {
+  background: rgba(0, 0, 0, 0.6);
+}
+#detailSection .back .back2 #article1 .art1Top {
+  height: 80px;
+}
+#detailSection .back .back2 #article1 .champImg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 600px;
+}
+#detailSection .back .back2 #article1 .champImg .btn {
+  width: 200px;
+  line-height: 100%;
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  transition: all 0.5s;
+  text-shadow: 3px 3px 3px #333;
+}
+#detailSection .back .back2 #article1 .champImg .btn:hover {
+  cursor: pointer;
+  color: #e42020;
+  transition: all 0.5s;
+}
+#detailSection .back .back2 #article1 .champImg .champName {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#detailSection .back .back2 #article1 .champImg .champName .aa {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 3px 3px 3px #333;
+  text-align: center;
+}
+#detailSection .back .back2 #article1 .champImg .champName .aa:hover {
+  cursor: default;
+}
+#detailSection .back .back2 #article2 {
+  padding: 10px;
+  height: 250px;
+  color: #111;
+  background: rgba(255, 255, 255, 0.6);
+}
+#detailSection .back .back2 #article2 .detailMenu {
+  display: flex;
+  justify-content: space-between;
+}
+#detailSection .back .back2 #article2 .detailMenu div {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+#detailSection .back .back2 #article2 .detailMenu div:hover {
+  cursor: default;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel {
+  margin-top: 40px;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .inputBox {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .inputBox input {
+  border: none;
+  padding: 10px;
+  width: 50px;
+  margin: 30px;
+  background: #f7f7f7;
+  text-align: center;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .inputBox button {
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 33%;
+  border: none;
+  background: #444;
+  text-align: center;
+  transition: all 0.5s;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .inputBox button:hover {
+  cursor: pointer;
+  transition: all 0.5s;
+  background: #e42020;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .menu {
+  display: flex;
+  justify-content: center;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .menu div {
+  padding: 10px;
+  width: 50%;
+  font-size: 15px;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .menu button {
+  background: none;
+  border: none;
+  color: #111;
+  width: 50%;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+#detailSection .back .back2 #article2 .detailMenu .setLevel .menu button:hover {
+  cursor: pointer;
+}
+#detailSection .back .back2 #article2 .detailMenu table {
+  max-width: 260px;
+  font-size: 13px;
+}
+#detailSection .back .back2 #article2 .detailMenu table tbody {
+  padding: 15px;
+}
+#detailSection .back .back2 #article2 .detailMenu table tbody td {
+  padding: 5px;
+  max-width: 100px;
+}
+#detailSection .back .back2 #article2 .detailMenu table tbody td:nth-child(1) {
+  text-align: left;
+  padding-left: 20px;
+}
+#detailSection .back .back2 #article2 .detailMenu table tbody td:nth-child(2) {
+  width: 20px;
+  text-align: center;
+}
+#detailSection .back .back2 #article2 .detailMenu table tbody td:nth-child(3) {
+  text-align: right;
+  padding-right: 20px;
+}
+
+#playSection {
+  background: url(./cssSource/LOLMain/LOLMainArt3Back1.jpg) no-repeat center top;
+  background-size: cover;
+  padding: 160px;
+  color: #000;
+}
+#playSection #article1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 50px;
+}
+#playSection #article1 h2 {
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 800;
+}
+#playSection #article1 .bod {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-height: 900px;
+}
+#playSection #article1 .bod .icon {
+  width: 10%;
+  margin: 5px;
+  transition: all 0.5s;
+  border-radius: 10%;
+  overflow: hidden;
+}
+#playSection #article1 .bod .icon p {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+#playSection #article1 .bod .icon .img {
+  overflow: hidden;
+  border-radius: 10%;
+}
+#playSection #article1 .bod .icon img {
+  scale: 1.3;
+  transition: all 0.5s;
+}
+#playSection #article1 .bod .icon:hover {
+  box-shadow: 0 0 10px 0 #fff;
+  transition: all 0.5s;
+}
+#playSection #article1 .bod .icon:hover img {
+  scale: 1.15;
+}
+#playSection #article1 .bod .icon .menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#playSection #article1 .bod .icon .menu i:hover {
+  cursor: pointer;
+}
+#playSection #article1 .foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+#playSection #article1 .foot div {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  padding: 20px;
+}
+#playSection #article1 .foot div:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */

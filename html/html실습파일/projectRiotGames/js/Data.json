@@ -1,0 +1,35 @@
+
+{
+    "art2Post" : [
+        {
+            "title" : "소울 파이터 코스프레가이드 2라운드",
+            "category" : "소식",
+            "imgLink" : "./css/cssSource/article2Main.png",
+            "game" : "L"
+        },
+        {
+            "title" : "2023년 하반기 계획|개발자 스냅샷-레전드 오브 룬테라",
+            "category" : "소식",
+            "imgLink" : "./css/cssSource/article2Banner1.png",
+            "game" : "R"
+        },
+        {
+            "title" : "아레나: 신규 모드 제작기",
+            "category" : "Riot 내부",
+            "imgLink" : "./css/cssSource/article2Banner2.jpg",
+            "game" : "L"
+        },
+        {
+            "title" : "챔피언스 로스앤젤레스에 대해 알아야할 것들",
+            "category" : "소식",
+            "imgLink" : "./css/cssSource/article2Banner3.jpg",
+            "game" : "V"
+        },
+        {
+            "title" : "소울 파이터 코스프레 가이드 1라운드",
+            "category" : "소식",
+            "imgLink" : "./css/cssSource/article2Banner4.png",
+            "game" : "L"
+        }
+    ]
+}

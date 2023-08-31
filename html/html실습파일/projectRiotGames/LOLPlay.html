@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOLPlay</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div class="header"></div>
+
+    <section id="playSection">
+        <article id="article1" class="row">
+            <div class="head">
+                <h2>Box</h2>
+            </div>
+            <div class="bod">
+                <!-- <div class="icon">
+                    <div class="img">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/13.17.1/img/champion/Aatrox.png" alt="">
+                    </div>
+                    <div class="menu">
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div> -->
+            </div>
+            <div class="foot">
+                <div><a href="./LOLChamp.html">목록으로</a></div>
+                <div class="delAll">모두 비우기</div>
+            </div>
+        </article>
+    </section>
+
+    <div class="footer"></div>
+    
+    <script src="./js/common.js"></script>
+    <script>
+        $('.header').load('header.html', function(){
+            $('.bb').remove()
+            let text = `<div class="bb">
+                <div class="sideMenuBar">
+                    <a href="./LOLMain.html">
+                        메인으로   
+                    </a>
+                </div>
+                <div class="sideMenuBar">
+                    <a href="./LOLChamp.html">
+                        더 많은 챔피언 알아보기   
+                    </a>
+                </div>
+            </div>`
+
+            $('.sideTitleList').prepend(text)
+        })
+        //로딩이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg
+        //풀이미지링크 http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg
+        //작은이미지링크 http://ddragon.leagueoflegends.com/cdn/13.17.1/img/champion/Aatrox.png
+
+        //세션스토리지읽기
+        let champs = JSON.parse(localStorage.getItem("allChamp"))
+        console.log(champs)
+
+        function listning(){
+            if(champs){
+                let inner = ''
+                champs.forEach(Element => {
+                    inner+=`<div class="icon">
+                            <div class="img">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/13.17.1/img/champion/${Element}.png" alt="">
+                            </div>
+                            <div class="menu">
+                                <a href="./LOLDetail.html?${Element}"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <i class="fa-solid fa-x"></i>
+                            </div>
+                        </div>`
+                });
+                $('.icon').remove()
+                $('.bod').append(inner)
+                inner = ''
+            }else{
+                let asd = '<div class="icon"><p>비어있음</p></div>'
+                console.log(asd)
+                $('.icon').remove()
+                $('.bod').append(asd)
+            }
+        }
+        listning()
+
+        $('body').on('click', '.fa-x', function(){
+            let i = $(this).parents('.icon').index()
+            console.log(i)
+            champs.splice(i,1)
+            listning()
+            localStorage.setItem("allChamp", JSON.stringify(champs))
+            champs = JSON.parse(localStorage.getItem("allChamp"))
+        })
+
+        $('.delAll').on('click', function(){
+            localStorage.setItem("allChamp", JSON.stringify([]))
+            champs = JSON.parse(localStorage.getItem("allChamp"))
+            listning()
+            let asd = '<div class="icon"><p>비어있음</p></div>'
+            console.log(asd)
+            $('.icon').remove()
+            $('.bod').append(asd)
+        })
+    </script>
+
+</body>
+</html>
